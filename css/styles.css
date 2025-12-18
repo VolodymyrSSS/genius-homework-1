@@ -1,0 +1,315 @@
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-weight: 400;
+  src: url('../fonts/roboto-v50-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-weight: 500;
+  src: url('../fonts/roboto-v50-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-weight: 900;
+  src: url('../fonts/roboto-v50-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Play';
+  font-weight: 400;
+  src: url('../fonts/play-v21-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+  --color-primary-light: #ffffff;
+  --color-primary-dark: #011c44;
+  --color-secondary-light: #747272;
+  --color-secondary-normal: #4a4a4a;
+  --color-secondary-dark: #011f4a;
+  --color-brand-main: #2b7fff;
+  --color-brand-adition: #ffd02b;
+}
+
+/* Basic */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--color-primary-dark);
+  background-color: var(--color-primary-light);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  display: inline-block;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Buttons */
+
+.button {
+  display: block;
+  color: var(--color-primary-light);
+  background-color: var(--color-brand-main);
+  border: 2px solid var(--color-brand-main);
+  border-radius: 32px;
+  font-weight: 600;
+  padding: 16px 32px;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.button:hover {
+  color: var(--color-brand-dark);
+  background-color: transparent;
+}
+
+/* Links */
+
+.link {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: var(--color-brand-main);
+  font-weight: 700;
+}
+
+/* shared */
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.accent {
+  color: var(--color-brand-main);
+}
+
+.centered {
+  text-align: center;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.gradient-wrapper {
+  background-color: transparent;
+  background-image: url('../images/gradient-curve.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+/* Header */
+
+.header-logo {
+  width: 74px;
+  height: 42px;
+}
+
+/* Hero section*/
+
+.hero {
+  background-color: var(--color-primary-light);
+  background-image: url('../images/bg-image-hero.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
+  padding-bottom: 124px;
+  margin-bottom: 96px;
+}
+
+.hero-wrapper {
+  width: 529px;
+  height: 408px;
+}
+
+.hero-name {
+  color: var(--color-primary-dark);
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  color: var(--color-brand-main);
+  font-family: 'Play', sans-serif;
+  font-size: 140px;
+  font-weight: 700;
+  line-height: 0.8;
+  margin-bottom: 40px;
+}
+
+.hero-promo {
+  color: var(--color-secondary-normal);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 14px;
+}
+
+/* About section*/
+
+.about {
+  position: relative;
+  margin-bottom: 96px;
+}
+
+.about-star {
+  position: absolute;
+  z-index: 1;
+}
+
+.star-1 {
+  width: 64px;
+  height: 64px;
+  right: 294px;
+  bottom: 270px;
+}
+
+.star-2 {
+  width: 40px;
+  height: 40px;
+  top: 32px;
+  right: -18px;
+}
+
+.star-3 {
+  width: 16px;
+  height: 16px;
+  bottom: 404px;
+  right: 6px;
+}
+
+.about-title {
+  color: var(--color-secondary-normal);
+  font-family: 'Play', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+}
+
+.about-text {
+  color: var(--color-primary-dark);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.7;
+}
+
+.about-text .bolded {
+  font-weight: 600;
+}
+
+.about-img {
+  width: 335px;
+  height: 328px;
+  border-radius: 50%;
+}
+
+/* Advantages section*/
+
+.advantages-title {
+  color: var(--color-primary-dark);
+  font-family: 'Play', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+}
+
+.advantages-text {
+  color: var(--color-primary-dark);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* procedures section */
+
+.procedures {
+  margin-bottom: 96px;
+}
+
+.procedures-title {
+  color: var(--color-primary-dark);
+  font-family: 'Play', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+}
+
+.procedures-card {
+  display: inline-block;
+}
+
+.procedures-img {
+  width: 344px;
+  height: 456px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 120px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 120px;
+}
+
+/* contact section */
+
+.contact {
+  margin-bottom: 96px;
+}
+
+.contact-title {
+  color: var(--color-primary-dark);
+  font-family: 'Play', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+}
+
+/* Footer */
