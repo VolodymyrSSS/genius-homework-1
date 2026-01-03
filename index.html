@@ -14,8 +14,8 @@
             <img src="./images/logo.svg" alt="Логотип салону Beauty Zone" />
           </a>
         </div>
-        <nav class="header-nav">
-          <ul>
+        <nav class="header-nav centered">
+          <ul class="centered">
             <li><a class="link" href="#about-section">Про нас</a></li>
             <li><a class="link" href="#advantages-section">Чому ми</a></li>
             <li><a class="link" href="#procedures-section">Процедури</a></li>
@@ -23,12 +23,31 @@
           </ul>
         </nav>
         <div class="header-social">
-          <a href="#"></a>
-          <a href="#"></a>
-          <a href="#"></a>
+          <a class="link" href="#">
+            <svg class="social-icon" width="32" height="32">
+              <use
+                xlink:href="./images/svg-sprite.svg#icon-telephone-icon"
+              ></use>
+            </svg>
+          </a>
+          <a class="link" href="#">
+            <svg class="social-icon" width="32" height="32">
+              <use
+                xlink:href="./images/svg-sprite.svg#icon-facebook-icon"
+              ></use>
+            </svg>
+          </a>
+          <a class="link" href="#">
+            <svg class="social-icon" width="32" height="32">
+              <use
+                xlink:href="./images/svg-sprite.svg#icon-instagram-icon"
+              ></use>
+            </svg>
+          </a>
         </div>
       </div>
     </header>
+
     <main>
       <section class="hero">
         <div class="container">
@@ -48,37 +67,25 @@
       </section>
 
       <section id="about-section" class="about">
-        <div class="container">
-          <img
-            src="./images/star1.svg"
-            class="about-star star-1"
-            alt="bleck star one"
-          />
-          <img
-            src="./images/star2.svg"
-            class="about-star star-2"
-            alt="blue star two"
-          />
-          <img
-            src="./images/star3.svg"
-            class="about-star star-3"
-            alt="bleck star three"
-          />
-          <h2 class="about-title">
-            Перевтілюйтесь в <span class="accent" lang="en">Beauty Zone!</span>
-          </h2>
-          <p class="about-text">
-            Наша косметологічна клініка пропонує вам професійні послуги<br />
-            з догляду за шкірою обличчя та тіла.
-          </p>
-          <p class="about-text">
-            B <span class="bolded" lang="en">beauty zone</span> ми гарантуємо
-            найвищі стандарти якості<br />
-            та приємний сервіс. Наші косметологічні процедури та препарати<br />
-            допоможуть вам підтримувати свою красу та молодість.<br />
-            З нами краса назавжди!
-          </p>
-          <div>
+        <div class="container about-container">
+          <div class="about-text-wrapper">
+            <h2 class="about-title">
+              Перевтілюйтесь в
+              <span class="accent" lang="en">Beauty Zone!</span>
+            </h2>
+            <p class="about-text">
+              Наша косметологічна клініка пропонує вам професійні послуги<br />
+              з догляду за шкірою обличчя та тіла.
+            </p>
+            <p class="about-text">
+              B <span class="bolded" lang="en">beauty zone</span> ми гарантуємо
+              найвищі стандарти якості<br />
+              та приємний сервіс. Наші косметологічні процедури та препарати<br />
+              допоможуть вам підтримувати свою красу та молодість.<br />
+              З нами краса назавжди!
+            </p>
+          </div>
+          <div class="about-img-wrapper">
             <img
               src="./images/woman_befour_serg.jpg"
               alt="Стан лиця жінки перед операцією"
@@ -89,6 +96,22 @@
               alt="Стан лиця жінки після операції"
               class="about-img"
             />
+            <!-- Decorative stars -->
+            <img
+              src="./images/star1.svg"
+              class="about-star star-1"
+              alt="black star one"
+            />
+            <img
+              src="./images/star2.svg"
+              class="about-star star-2"
+              alt="blue star two"
+            />
+            <img
+              src="./images/star3.svg"
+              class="about-star star-3"
+              alt="black star three"
+            />
           </div>
         </div>
       </section>
@@ -96,78 +119,119 @@
       <div class="gradient-wrapper">
         <section id="advantages-section" class="advantages">
           <div class="container">
-            <h2 class="advantages-title centered">
-              Чому люди <span class="accent">обирають нас</span>
-            </h2>
-            <article class="advantages-card">
-              <h3 class="visually-hidden">Стаж косметологів</h3>
-              <div class="advantages-image">
-                <!-- icon -->
+            <div class="advantages-container">
+              <h2 class="advantages-title centered">
+                Чому люди <span class="accent">обирають нас</span>
+              </h2>
+              <div class="advantages-list">
+                <article class="advantages-card">
+                  <h3 class="visually-hidden">Стаж косметологів</h3>
+                  <div class="advantages-image">
+                    <svg class="advantages-icon" width="48" height="48">
+                      <use
+                        xlink:href="./images/svg-sprite.svg#icon-science-icon"
+                      ></use>
+                    </svg>
+                  </div>
+                  <div class="advantages-text centered">
+                    <p>
+                      Всі наші косметологи мають вищу медичну освіту та стаж
+                      роботи від 5 років
+                    </p>
+                  </div>
+                </article>
+                <article class="advantages-card">
+                  <h3 class="visually-hidden">Професійне обладнання</h3>
+                  <div class="advantages-image">
+                    <svg class="advantages-icon" width="48" height="48">
+                      <use
+                        xlink:href="./images/svg-sprite.svg#icon-cosmetics-icon"
+                      ></use>
+                    </svg>
+                  </div>
+                  <div class="advantages-text centered">
+                    <p>
+                      Використовуємо тільки професійне обладнання та косметику,
+                      перевірену часом
+                    </p>
+                  </div>
+                </article>
+                <article class="advantages-card">
+                  <h3 class="visually-hidden">Наша мета</h3>
+                  <div class="advantages-image">
+                    <svg class="advantages-icon" width="48" height="48">
+                      <use
+                        xlink:href="./images/svg-sprite.svg#icon-crown-icon"
+                      ></use>
+                    </svg>
+                  </div>
+                  <div class="advantages-text centered">
+                    <p>
+                      Наша мета - підкреслити переваги та приховати недоліки, а
+                      не переробити
+                    </p>
+                  </div>
+                </article>
               </div>
-              <div class="advantages-text">
-                <p>
-                  Всі наші косметологи мають вищу медичну освіту та стаж роботи
-                  від 5 років
-                </p>
-              </div>
-            </article>
-            <article class="advantages-card">
-              <h3 class="visually-hidden">Професійне обладнання</h3>
-              <div class="advantages-image">
-                <!-- icon -->
-              </div>
-              <div class="advantages-text">
-                <p>
-                  Використовуємо тільки професійне обладнання та косметику,
-                  перевірену часом
-                </p>
-              </div>
-            </article>
-            <article class="advantages-card">
-              <h3 class="visually-hidden">Наша мета</h3>
-              <div class="advantages-image">
-                <!-- icon -->
-              </div>
-              <div class="advantages-text">
-                <p>
-                  Наша мета - підкреслити переваги та приховати недоліки, а не
-                  переробити
-                </p>
-              </div>
-            </article>
+            </div>
           </div>
         </section>
 
         <section id="procedures-section" class="procedures">
           <div class="container">
-            <h2 class="procedures-title centered">
-              Наші <span class="accent">процедури</span>
-            </h2>
-            <!-- slider -->
-            <article class="procedures-card">
-              <h3 class="visually-hidden">Процедура догляду за шкірою</h3>
-              <img
-                src="./images/skin-care.jpg"
-                alt="Процедура догляду за шкірою"
-                class="procedures-img"
-              />
-            </article>
-            <article class="procedures-card">
-              <h3 class="visually-hidden">Процедура ботокса</h3>
-              <img
-                src="./images/botoks.jpg"
-                alt="Процедура ботокса"
-                class="procedures-img"
-              />
-            </article>
-            <article class="procedures-card">
-              <h3 class="visually-hidden">Процедура натягування шкіри</h3>
-              <img
-                src="./images/wrinkle-smoothing.jpg"
-                alt="Процедура натягування шкіри"
-                class="procedures-img"
-              />
-            </article>
+            <div class="procedures-container">
+              <h2 class="procedures-title centered">
+                Наші <span class="accent">процедури</span>
+              </h2>
+              <!-- Swiper main container -->
+              <div class="swiper procedures-swiper">
+                <!-- Navigation buttons -->
+                <button type="button" class="swiper-button prev">
+                  <svg width="16" height="16">
+                    <use xlink:href="./images/svg-sprite.svg#icon-arrow"></use>
+                  </svg>
+                </button>
+                <!-- Slides wrapper -->
+                <div class="swiper-wrapper">
+                  <article class="swiper-slide procedures-card">
+                    <h3 class="visually-hidden">Процедура догляду за шкірою</h3>
+                    <img
+                      src="./images/skin-care.jpg"
+                      alt="Процедура догляду за шкірою"
+                      class="procedures-img"
+                    />
+                  </article>
+                  <article class="swiper-slide procedures-card">
+                    <h3 class="visually-hidden">Процедура ботокса</h3>
+                    <img
+                      src="./images/botoks.jpg"
+                      alt="Процедура ботокса"
+                      class="procedures-img"
+                    />
+                  </article>
+                  <article class="swiper-slide procedures-card">
+                    <h3 class="visually-hidden">Процедура натягування шкіри</h3>
+                    <img
+                      src="./images/wrinkle-smoothing.jpg"
+                      alt="Процедура натягування шкіри"
+                      class="procedures-img"
+                    />
+                  </article>
+                </div>
+                <!-- Navigation button -->
+                <button type="button" class="swiper-button next">
+                  <svg width="16" height="16">
+                    <use xlink:href="./images/svg-sprite.svg#icon-arrow"></use>
+                  </svg>
+                </button>
+                <!-- Slides pagination -->
+                <div class="swiper-pagination">
+                  <span class="pagination-bullet"></span>
+                  <span class="pagination-bullet"></span>
+                  <span class="pagination-bullet"></span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </div>
@@ -234,5 +298,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   </body>
 </html>

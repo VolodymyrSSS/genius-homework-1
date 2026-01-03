@@ -111,7 +111,6 @@ address {
 
 .link:hover {
   color: var(--color-brand-main);
-  font-weight: 700;
 }
 
 /* shared */
@@ -150,9 +149,60 @@ address {
 
 /* Header */
 
+.header {
+  position: absolute; /* float over hero */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.25);
+  z-index: 10;
+  padding: 20px 0;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .header-logo {
+  position: static;
   width: 74px;
   height: 42px;
+}
+
+.header-nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.header-nav ul {
+  display: flex; /* забезпечує nav links рівномірно розподілені в одну лінію*/
+  gap: 24px;
+}
+
+.header-nav li {
+  display: inline-block;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.header-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.social-icon {
+  fill: var(--color-primary-dark);
+}
+
+.social-icon:hover {
+  fill: var(--color-brand-main);
+  stroke: var(--color-brand-main);
 }
 
 /* Hero section*/
@@ -162,14 +212,16 @@ address {
   background-image: url('../images/bg-image-hero.png');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: right center;
-  padding-bottom: 124px;
-  margin-bottom: 96px;
+  background-position: right top;
+  padding-top: 80px; /* щоб запобігти щоб контент секції не був розміщений під абсолютним header*/
+  padding-bottom: 72px;
+  margin-bottom: 42px;
 }
 
 .hero-wrapper {
-  width: 529px;
-  height: 408px;
+  max-width: 529px;
+  /* padding: 112px 0 40px 80px; */
+  padding: clamp(64px, 12vh, 112px) 0 40px clamp(24px, 6vw, 80px);
 }
 
 .hero-name {
@@ -183,13 +235,16 @@ address {
 .hero-title {
   color: var(--color-brand-main);
   font-family: 'Play', sans-serif;
-  font-size: 140px;
+  /* font-size: 140px; */
+  font-size: clamp(48px, 10vw, 140px);
   font-weight: 700;
-  line-height: 0.8;
+  line-height: 0.9;
   margin-bottom: 40px;
 }
 
 .hero-promo {
+  /* max-width: 238px; */
+  max-width: 36ch; /* встановлює ширину текстових блоків відносно символів, а не пікселів і тут приблизно 36 символів на рядок */
   color: var(--color-secondary-normal);
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -202,40 +257,33 @@ address {
 
 .about {
   position: relative;
-  margin-bottom: 96px;
+  overflow: visible; /* тому що декоративні зірки виходять за контейнер */
+  margin-top: 0;
 }
 
-.about-star {
-  position: absolute;
-  z-index: 1;
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
 }
 
-.star-1 {
-  width: 64px;
-  height: 64px;
-  right: 294px;
-  bottom: 270px;
-}
-
-.star-2 {
-  width: 40px;
-  height: 40px;
-  top: 32px;
-  right: -18px;
-}
-
-.star-3 {
-  width: 16px;
-  height: 16px;
-  bottom: 404px;
-  right: 6px;
+.about-text-wrapper {
+  flex: 1; /* займе доступний простір */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 710px;
 }
 
 .about-title {
+  max-width: 529px;
   color: var(--color-secondary-normal);
   font-family: 'Play', sans-serif;
   font-weight: 700;
   font-size: 64px;
+  line-height: 1;
+  margin: 0;
 }
 
 .about-text {
@@ -250,19 +298,107 @@ address {
   font-weight: 600;
 }
 
+.about-img-wrapper {
+  position: relative; /* дозволить прив'язати декоративні зірки до цього блоку а не до viewPort */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
 .about-img {
+  position: relative; /* дозволить img змістити куда треба без порушення flex потоку */
   width: 335px;
-  height: 328px;
+  height: auto;
   border-radius: 50%;
+}
+
+.about-img:first-child {
+  top: -40px;
+  left: -108px;
+}
+
+.about-img:last-child {
+  top: 0;
+  right: -106px;
+}
+
+.about-star {
+  position: absolute;
+  z-index: 1;
+}
+
+/* to reduce zoom drift and improve responsiveness it was switched to relative units */
+.star-1 {
+  width: 4rem; /* 64px */
+  height: 4rem;
+  right: 16rem; /* використання rem замість px робить ел стабільними коли змінюємо масштаб */
+  bottom: 20rem;
+}
+
+.star-2 {
+  width: 2.5rem; /* 40px */
+  height: 2.5rem;
+  top: 0;
+  right: -6rem;
+}
+
+.star-3 {
+  width: 1rem; /* 16px */
+  height: 1rem;
+  top: 14rem;
+  right: -4rem;
 }
 
 /* Advantages section*/
 
+.advantages {
+  padding-top: 178px;
+  margin-bottom: 96px;
+}
+
+.advantages-container {
+  width: 1060px;
+  margin: 0 auto;
+}
+
 .advantages-title {
+  display: block; /* ensures it sits on its own line */
+  width: 442px;
   color: var(--color-primary-dark);
   font-family: 'Play', sans-serif;
   font-weight: 700;
   font-size: 64px;
+  margin: 0 auto 48px; /* centers and adds spacing below */
+}
+
+.advantages-list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 24px;
+  margin: 0 auto;
+}
+
+.advantages-card {
+  display: flex;
+  flex-direction: column;
+  width: 316px;
+  height: 181px;
+  padding: 24px 32px;
+  background-color: var(--color-primary-light);
+  border-radius: 32px;
+  box-shadow: 0px 4px 4px 0px rgba(168, 198, 245, 0.38);
+}
+
+.advantages-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.advantages-icon {
+  fill: var(--color-brand-main);
 }
 
 .advantages-text {
@@ -276,7 +412,19 @@ address {
 /* procedures section */
 
 .procedures {
+  padding-top: 0;
   margin-bottom: 96px;
+}
+
+.procedures-container {
+  max-width: 1216px;
+  margin: 0 auto;
+}
+
+.procedures-swiper {
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
 .procedures-title {
@@ -287,7 +435,7 @@ address {
 }
 
 .procedures-card {
-  display: inline-block;
+  display: block;
 }
 
 .procedures-img {
@@ -297,6 +445,36 @@ address {
   border-top-right-radius: 120px;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 120px;
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.swiper-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-shrink: 0; */
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background-color: transparent;
+  fill: var(--color-primary-dark);
+  border-radius: 50%;
+  border: 1px solid var(--color-primary-dark);
+  cursor: pointer;
+}
+
+.swiper-button:hover {
+  background-color: var(--color-brand-main);
+  fill: var(--color-primary-light);
+}
+
+.swiper-button.next {
+  transform: rotate(180deg);
 }
 
 /* contact section */
