@@ -1,17 +1,13 @@
-const swiper = new Swiper('.procedures-swiper', {
-  loop: false,
+const swiper = new Swiper('.swiper-container', {
+  loop: true,
   slidesPerView: 1,
-  spaceBetween: 20,
-  // Responsive breakpoints
+  spaceBetween: 16,
+  keyboard: {
+    enabled: true,
+  },
   breakpoints: {
-    // when window width is >= 480px
-    768: {
-      slidesPerView: 2,
-    },
-    // when window width is >= 768px
-    1280: {
-      slidesPerView: 3,
-    },
+    768: { slidesPerView: 2 },
+    1280: { slidesPerView: 3 },
   },
   pagination: {
     el: '.pagination',
@@ -21,7 +17,7 @@ const swiper = new Swiper('.procedures-swiper', {
     clickable: true,
   },
   navigation: {
-    nextEl: '.swiper-button.next',
-    prevEl: '.swiper-button.prev',
+    nextEl: '.procedures-button.next',
+    prevEl: '.procedures-button.prev',
   },
 });
