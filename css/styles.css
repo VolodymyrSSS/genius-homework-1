@@ -139,11 +139,8 @@ address {
   width: 1px;
 }
 
-.is-hidden {
-  /* display: none; але якщо так- то цю властивість анімувати не можна*/
-  opacity: 0;
-  visibility: hidden; /*так елемент вилучається з потоку*/
-  pointer-events: none;
+.no-scroll {
+  overflow: hidden;
 }
 
 .gradient-wrapper {
@@ -452,22 +449,25 @@ address {
 }
 
 .advantages-title {
-  display: block; /* ensures it sits on its own line */
-  /* width: 442px; */
+  display: block; /* впевнитись що заголовок займає свій окремий ряд */
   color: var(--color-primary-dark);
   font-family: 'Play', sans-serif;
   font-weight: 700;
   font-size: 64px;
   text-align: center;
-  margin: 0 auto 48px; /* centers and adds spacing below */
+  margin: 0 auto 48px; /* відцентрувати заголовок та додати відступ знизу */
 }
 
 .advantages-list {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
   margin: 0 auto;
+}
+
+.advantages-item {
+  flex-basis: calc((100% -112px) / 3);
 }
 
 .advantages-card {
@@ -479,6 +479,11 @@ address {
   background-color: var(--color-primary-light);
   border-radius: 32px;
   box-shadow: 0px 4px 4px 0px rgba(168, 198, 245, 0.38);
+}
+
+.advantages-card:hover {
+  transform: scale(1.08);
+  transition: transform 0.3s ease;
 }
 
 .advantages-image {
@@ -741,22 +746,31 @@ address {
 /* modal window */
 
 .backdrop {
-  position: absolute;
+  position: fixed; /* покриває увесь viewport, а не тільки частину вікна відносно чого визначено код */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100vw; /* забезпечить розташува модального вікна на увесь viewport */
+  height: 100vh; /* забезпечить розташува модального вікна на увесь viewport */
   background-color: rgba(1, 28, 68, 0.5);
   padding: 20px 0;
-  transition: opacity 0.4s, visibility 0.4s;
+  transition: opacity 0.4s ease, visibility 0.4s ease; /* доданий ефект швидкого згасання */
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 9999; /* щоб бути впевненим що затемнення розташоване над усіма елементами */
 }
 
-/* modal window */
+.backdrop.is-hidden {
+  /* display: none; але якщо так- то цю властивість анімувати не можна*/
+  opacity: 0;
+  visibility: hidden; /*так елемент вилучається з потоку*/
+  pointer-events: none;
+}
 
 .modal {
+  position: relative;
   width: 100%;
   max-width: 880px;
   height: 100%;
@@ -765,8 +779,6 @@ address {
   background-color: var(--color-secondary-dark);
   border-radius: 32px;
   overflow-y: auto;
-  position: relative;
-  z-index: 1000;
 }
 
 .modal-form {

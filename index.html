@@ -11,7 +11,7 @@
     /> -->
   </head>
   <body>
-    <header class="header" role="navigation" aria-label="Основна навігація">
+    <header class="header" aria-label="Основна навігація">
       <div class="container">
         <div class="header-logo">
           <a href="/">
@@ -50,26 +50,23 @@
           </a>
         </div>
         <!-- Burger button -->
-          <button
-            type="button"
-            class="header-burger"
-          >
-            <svg width="24" height="24">
-              <use xlink:href="./images/svg-sprite.svg#icon-menu"></use>
-            </svg>
-          </button>
-          <!-- Mobile menu -->
-          <div
-            class="mobile-menu"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Мобільне меню"
-            tabindex="-1"
-          ></div>
+        <button type="button" class="header-burger">
+          <svg width="24" height="24">
+            <use xlink:href="./images/svg-sprite.svg#icon-menu"></use>
+          </svg>
+        </button>
+        <!-- Mobile menu -->
+        <div
+          class="mobile-menu"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Мобільне меню"
+          tabindex="-1"
+        ></div>
       </div>
     </header>
 
-    <main role="main">
+    <main>
       <section class="hero" role="banner" aria-labelledby="hero-title">
         <div class="container">
           <div class="hero-wrapper">
@@ -78,10 +75,11 @@
             <button
               class="button modal-btn-open"
               type="button"
-              aria-label="Мобільне вікно форми"
+              aria-label="Відкрити модальне вікно для замовлення дзвінка"
               aria-haspopup="dialog"
-              aria-controls="contact-section">
-                Замовити дзвінок
+              aria-controls="modal-window"
+            >
+              Замовити дзвінок
             </button>
             <p class="hero-promo">
               Запишись та отримай безкоштовну консультацію нашого косметолога
@@ -90,7 +88,7 @@
         </div>
       </section>
 
-      <section id="about-section" class="about"aria-labelledby="about-title">
+      <section id="about-section" class="about" aria-labelledby="about-title">
         <div class="container about-container">
           <div class="about-text-wrapper">
             <h2 id="about-title" class="about-title">
@@ -144,68 +142,97 @@
       </section>
 
       <div class="gradient-wrapper">
-        <section id="advantages-section" class="advantages" aria-labelledby="advantages-title">
+        <section
+          id="advantages-section"
+          class="advantages"
+          aria-labelledby="advantages-title"
+        >
           <div class="container">
             <div class="advantages-container">
               <h2 id="advantages-title" class="advantages-title centered">
-                Чому люди<br>
-                 <span class="accent">обирають нас</span>
+                Чому люди<br />
+                <span class="accent">обирають нас</span>
               </h2>
-              <div class="advantages-list">
-                <article class="advantages-card">
-                  <h3 class="visually-hidden">Стаж косметологів</h3>
-                  <div class="advantages-image">
-                    <svg class="advantages-icon" width="48" height="48" aria-hidden="true">
-                      <use
-                        xlink:href="./images/svg-sprite.svg#icon-science-icon"
-                      ></use>
-                    </svg>
-                  </div>
-                  <div class="advantages-text centered">
-                    <p>
-                      Всі наші косметологи мають вищу медичну освіту та стаж
-                      роботи від 5 років
-                    </p>
-                  </div>
-                </article>
-                <article class="advantages-card">
-                  <h3 class="visually-hidden">Професійне обладнання</h3>
-                  <div class="advantages-image">
-                    <svg class="advantages-icon" width="48" height="48" aria-hidden="true">
-                      <use
-                        xlink:href="./images/svg-sprite.svg#icon-cosmetics-icon"
-                      ></use>
-                    </svg>
-                  </div>
-                  <div class="advantages-text centered">
-                    <p>
-                      Використовуємо тільки професійне обладнання та косметику,
-                      перевірену часом
-                    </p>
-                  </div>
-                </article>
-                <article class="advantages-card">
-                  <h3 class="visually-hidden">Наша мета</h3>
-                  <div class="advantages-image">
-                    <svg class="advantages-icon" width="48" height="48" aria-hidden="true">
-                      <use
-                        xlink:href="./images/svg-sprite.svg#icon-crown-icon"
-                      ></use>
-                    </svg>
-                  </div>
-                  <div class="advantages-text centered">
-                    <p>
-                      Наша мета - підкреслити переваги та приховати недоліки, а
-                      не переробити
-                    </p>
-                  </div>
-                </article>
-              </div>
+              <ul class="advantages-list">
+                <li class="advantages-item">
+                  <article class="advantages-card">
+                    <h3 class="visually-hidden">Стаж косметологів</h3>
+                    <div class="advantages-image">
+                      <svg
+                        class="advantages-icon"
+                        width="48"
+                        height="48"
+                        aria-hidden="true"
+                      >
+                        <use
+                          xlink:href="./images/svg-sprite.svg#icon-science-icon"
+                        ></use>
+                      </svg>
+                    </div>
+                    <div class="advantages-text centered">
+                      <p>
+                        Всі наші косметологи мають вищу медичну освіту та стаж
+                        роботи від 5 років
+                      </p>
+                    </div>
+                  </article>
+                </li>
+                <li class="advantages-item">
+                  <article class="advantages-card">
+                    <h3 class="visually-hidden">Професійне обладнання</h3>
+                    <div class="advantages-image">
+                      <svg
+                        class="advantages-icon"
+                        width="48"
+                        height="48"
+                        aria-hidden="true"
+                      >
+                        <use
+                          xlink:href="./images/svg-sprite.svg#icon-cosmetics-icon"
+                        ></use>
+                      </svg>
+                    </div>
+                    <div class="advantages-text centered">
+                      <p>
+                        Використовуємо тільки професійне обладнання та
+                        косметику, перевірену часом
+                      </p>
+                    </div>
+                  </article>
+                </li>
+                <li class="advantages-item">
+                  <article class="advantages-card">
+                    <h3 class="visually-hidden">Наша мета</h3>
+                    <div class="advantages-image">
+                      <svg
+                        class="advantages-icon"
+                        width="48"
+                        height="48"
+                        aria-hidden="true"
+                      >
+                        <use
+                          xlink:href="./images/svg-sprite.svg#icon-crown-icon"
+                        ></use>
+                      </svg>
+                    </div>
+                    <div class="advantages-text centered">
+                      <p>
+                        Наша мета - підкреслити переваги та приховати недоліки,
+                        а не переробити
+                      </p>
+                    </div>
+                  </article>
+                </li>
+              </ul>
             </div>
           </div>
         </section>
 
-        <section id="procedures-section" class="procedures" aria-labelledby="procedures-title">
+        <section
+          id="procedures-section"
+          class="procedures"
+          aria-labelledby="procedures-title"
+        >
           <div class="container">
             <div class="procedures-container">
               <h2 id="procedures-title" class="procedures-title centered">
@@ -228,7 +255,9 @@
                   <ul class="procedures-list swiper-wrapper">
                     <li class="swiper-slide">
                       <article class="procedures-card">
-                        <h3 class="visually-hidden">Процедура догляду за шкірою</h3>
+                        <h3 class="visually-hidden">
+                          Процедура догляду за шкірою
+                        </h3>
                         <img
                           src="./images/skin-care.jpg"
                           alt="Процедура догляду за шкірою"
@@ -248,7 +277,9 @@
                     </li>
                     <li class="swiper-slide">
                       <article class="procedures-card">
-                        <h3 class="visually-hidden">Процедура натягування шкіри</h3>
+                        <h3 class="visually-hidden">
+                          Процедура натягування шкіри
+                        </h3>
                         <img
                           src="./images/wrinkle-smoothing.jpg"
                           alt="Процедура натягування шкіри"
@@ -258,7 +289,9 @@
                     </li>
                     <li class="swiper-slide">
                       <article class="procedures-card">
-                        <h3 class="visually-hidden">Процедура накладання маски</h3>
+                        <h3 class="visually-hidden">
+                          Процедура накладання маски
+                        </h3>
                         <img
                           src="./images/doing-mask.jpg"
                           alt="Процедура накладання маски"
@@ -268,29 +301,58 @@
                     </li>
                   </ul>
                   <!-- Pagination -->
-                  <div class="pagination" role="tablist" aria-label="Слайди навігації">
-                    <span class="pagination-bullet" role="tab" aria-label="Слайд 1" tabindex="0"></span>
-                    <span class="pagination-bullet" role="tab" aria-label="Слайд 2" tabindex="0"></span>
-                    <span class="pagination-bullet" role="tab" aria-label="Слайд 3" tabindex="0"></span>
-                    <span class="pagination-bullet" role="tab" aria-label="Слайд 4" tabindex="0"></span>
+                  <div
+                    class="pagination"
+                    role="tablist"
+                    aria-label="Слайди навігації"
+                  >
+                    <span
+                      class="pagination-bullet"
+                      role="tab"
+                      aria-label="Слайд 1"
+                      tabindex="0"
+                    ></span>
+                    <span
+                      class="pagination-bullet"
+                      role="tab"
+                      aria-label="Слайд 2"
+                      tabindex="0"
+                    ></span>
+                    <span
+                      class="pagination-bullet"
+                      role="tab"
+                      aria-label="Слайд 3"
+                      tabindex="0"
+                    ></span>
+                    <span
+                      class="pagination-bullet"
+                      role="tab"
+                      aria-label="Слайд 4"
+                      tabindex="0"
+                    ></span>
                   </div>
+                </div>
+                <!-- Navigation button: Next -->
+                <button
+                  type="button"
+                  class="procedures-button next"
+                  aria-label="Наступний слайд"
+                >
+                  <svg width="16" height="16" aria-hidden="true">
+                    <use xlink:href="./images/svg-sprite.svg#icon-arrow"></use>
+                  </svg>
+                </button>
               </div>
-              <!-- Navigation button: Next -->
-              <button
-                type="button"
-                class="procedures-button next"
-                aria-label="Наступний слайд"
-              >
-                <svg width="16" height="16" aria-hidden="true">
-                  <use xlink:href="./images/svg-sprite.svg#icon-arrow"></use>
-                </svg>
-              </button>
             </div>
           </div>
         </section>
       </div>
 
-      <section id="contact-section" class="contact" aria-labelledby="contact-title">
+      <section
+        id="contact-section"
+        class="contact"
+        aria-labelledby="contact-title"
+      >
         <div class="container">
           <h2 id="contact-title" class="contact-title centered">
             Як нас <span class="accent">знайти</span>
@@ -306,51 +368,67 @@
             ></iframe>
             <form class="form contact-form" autocomplete="off">
               <h3 class="contact-form-title">
-                Запишіться <span class="accent">безкоштовно</span><br>
+                Запишіться <span class="accent">безкоштовно</span><br />
                 та отримайте подарунок
               </h3>
               <div class="form-field input">
-                <label for="user-name-surname" class="input-label visually-hidden"
+                <label
+                  for="contact-user-name-surname"
+                  class="input-label visually-hidden"
                   >Ім'я та прізвище</label
                 >
                 <input
                   type="text"
-                  id="user-name-surname"
+                  id="contact-user-name-surname"
                   name="user-name-surname"
                   placeholder="Ваше ім'я та прізвище"
                   class="input-control"
                 />
               </div>
               <div class="form-field input">
-                <label for="user-tel" class="input-label visually-hidden"
+                <label
+                  for="contact-user-tel"
+                  class="input-label visually-hidden"
                   >Телефон</label
                 >
                 <input
                   type="tel"
-                  id="user-tel"
+                  id="contact-user-tel"
                   name="user-tel"
                   placeholder="Ваш номер телефону"
                   class="input-control"
                 />
               </div>
               <div class="form-field input">
-                <label for="user-email" class="input-label visually-hidden"
+                <label
+                  for="contact-user-email"
+                  class="input-label visually-hidden"
                   >Електронна пошта</label
                 >
                 <input
                   type="email"
-                  id="user-email"
+                  id="contact-user-email"
                   name="user-email"
                   placeholder="Ваша електронна пошта"
                   class="input-control"
                 />
               </div>
-              <button type="submit" class="form-btn button modal-btn-open" aria-label="Замовити дзвінок">
+              <button
+                class="form-btn button modal-btn-open"
+                type="button"
+                aria-label="Відкрити модальне вікно для замовлення дзвінка"
+                aria-haspopup="dialog"
+                aria-controls="modal-window"
+              >
                 Записатись безкоштовно
               </button>
               <p class="form-terms">
                 Натискаючи на кнопку я погоджуюсь з
-                <a href="#" class="form-terms-link" target = "_blank" aria-label="Політика конфіденційності"
+                <a
+                  href="#"
+                  class="form-terms-link"
+                  target="_blank"
+                  aria-label="Політика конфіденційності"
                   >політикою конфіденційності</a
                 >
               </p>
@@ -360,14 +438,14 @@
       </section>
     </main>
 
-    <footer class="footer" role="contentinfo" aria-labelledby="footer-title">
+    <footer class="footer" aria-labelledby="footer-title">
       <div class="container">
         <h2 id="footer-title" class="visually-hidden">Footer</h2>
         <div class="footer-container">
           <a href="#">
             <img src="./images/logo.svg" alt="Логотип салону Beauty Zone" />
           </a>
-          <nav class = "footer-nav" aria-label="Footer navigation">
+          <nav class="footer-nav" aria-label="Footer navigation">
             <ul>
               <li><a class="link" href="#about-section">Про нас</a></li>
               <li><a class="link" href="#advantages-section">Чому ми</a></li>
@@ -378,10 +456,18 @@
           <address>
             <ul class="address-list">
               <li>
-                <a class="link" href="tel:+380960000007" aria-label="Телефон: +38 (096) 000 00 07">+ 38 (096) 000 00 07</a>
+                <a
+                  class="link"
+                  href="tel:+380960000007"
+                  aria-label="Телефон: +38 (096) 000 00 07"
+                  >+ 38 (096) 000 00 07</a
+                >
               </li>
               <li>
-                <a class="link" href="mailto:beautyzone@gmail.com" aria-label="Електронна пошта: beautyzone@gmail.com"
+                <a
+                  class="link"
+                  href="mailto:beautyzone@gmail.com"
+                  aria-label="Електронна пошта: beautyzone@gmail.com"
                   >beautyzone@gmail.com</a
                 >
               </li>
@@ -391,38 +477,56 @@
                   href="https://maps.app.goo.gl/K8JBNJKHXzw8VqYu9"
                   target="_blank"
                   aria-label="Адреса: Україна, м. Київ, вул. Тараса Шевченка 5"
-                  >Україна, м. Київ,<br>
-                   вул. Тараса Шевченка 5</a
+                  >Україна, м. Київ,<br />
+                  вул. Тараса Шевченка 5</a
                 >
               </li>
             </ul>
             <div class="footer-social">
               <a class="link" href="tel:+380960000007" aria-label="Telephone">
                 <svg class="social-icon" width="32" height="32">
-                  <use xlink:href="./images/svg-sprite.svg#icon-telephone-icon"></use>
+                  <use
+                    xlink:href="./images/svg-sprite.svg#icon-telephone-icon"
+                  ></use>
                 </svg>
               </a>
               <a class="link" href="#" aria-label="Facebook">
                 <svg class="social-icon" width="32" height="32">
-                  <use xlink:href="./images/svg-sprite.svg#icon-facebook-icon"></use>
+                  <use
+                    xlink:href="./images/svg-sprite.svg#icon-facebook-icon"
+                  ></use>
                 </svg>
               </a>
               <a class="link" href="#" aria-label="Instagram">
                 <svg class="social-icon" width="32" height="32">
-                  <use xlink:href="./images/svg-sprite.svg#icon-instagram-icon"></use>
+                  <use
+                    xlink:href="./images/svg-sprite.svg#icon-instagram-icon"
+                  ></use>
                 </svg>
               </a>
             </div>
           </address>
           <div class="addition">
-            <a class="link" href="#" target = "_blank" aria-label = "Політика конфіденційності">Політика конфіденційності</a>
-            <p class="addition-copyright">&copy; 2022 Дані захищені</p>
+            <a
+              class="link"
+              href="#"
+              target="_blank"
+              aria-label="Політика конфіденційності"
+              >Політика конфіденційності</a
+            >
+            <p class="addition-copyright">&copy; 2026 Дані захищені</p>
           </div>
         </div>
       </div>
     </footer>
 
-    <div class="backdrop is-hidden">
+    <div
+      id="modal-window"
+      class="backdrop is-hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
       <div class="modal">
         <button class="modal-btn-close" aria-label="Закрити модальне вікно">
           <svg width="32" height="32" aria-hidden="true">
@@ -430,17 +534,17 @@
           </svg>
         </button>
         <form class="form modal-form" autocomplete="on">
-          <h3 class="modal-title centered">
+          <h3 id="modal-title" class="modal-title centered">
             Замовити дзвінок
           </h3>
           <p class="modal-promo centered">
-            Запишіться <span class="accent">безкоштовно</span><br>
+            Запишіться <span class="accent">безкоштовно</span><br />
             та отримайте подарунок
           </p>
           <div class="form-field input">
-            <label for="user-name-surname" class="input-label visually-hidden"
-              >Ім'я та прізвище</label
-            >
+            <label for="user-name-surname" class="input-label visually-hidden">
+              Ім'я та прізвище
+            </label>
             <input
               type="text"
               id="user-name-surname"
@@ -450,9 +554,9 @@
             />
           </div>
           <div class="form-field input">
-            <label for="user-tel" class="input-label visually-hidden"
-              >Телефон</label
-            >
+            <label for="user-tel" class="input-label visually-hidden">
+              Телефон
+            </label>
             <input
               type="tel"
               id="user-tel"
@@ -462,9 +566,9 @@
             />
           </div>
           <div class="form-field input">
-            <label for="user-email" class="input-label visually-hidden"
-              >Електронна пошта</label
-            >
+            <label for="user-email" class="input-label visually-hidden">
+              Електронна пошта
+            </label>
             <input
               type="email"
               id="user-email"
@@ -473,12 +577,20 @@
               class="input-control"
             />
           </div>
-          <button type="submit" class="form-btn button modal-btn-open" aria-label="Замовити дзвінок">
+          <button
+            type="submit"
+            class="form-btn button"
+            aria-label="Замовити дзвінок"
+          >
             Записатись безкоштовно
           </button>
           <p class="form-terms">
             Натискаючи на кнопку я погоджуюсь з
-            <a href="#" class="form-terms-link" target = "_blank" aria-label="Політика конфіденційності"
+            <a
+              href="#"
+              class="form-terms-link"
+              target="_blank"
+              aria-label="Політика конфіденційності"
               >політикою конфіденційності</a
             >
           </p>
