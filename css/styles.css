@@ -271,11 +271,12 @@ address {
 
 .social-icon {
   fill: var(--color-primary-dark);
+  transition: fill 0.4s ease, transform 0.3s ease;
 }
 
 .social-icon:hover {
   fill: var(--color-brand-main);
-  stroke: var(--color-brand-main);
+  transform: scale(1.1);
 }
 
 .header-burger {
@@ -405,13 +406,15 @@ address {
 
 .about-img:last-child {
   /* top: 0;
-  right: -106px; */
+  right: -106px; - можна так, але може бути нестійке */
   transform: translate(106px, 0); /* є більш стійке */
 }
 
 .about-star {
   position: absolute;
   z-index: 1;
+  /* базова анімація при необхідності додавати в майбутньому більше зірок */
+  /* animation: twinkle 2s infinite alternate, float 6s ease-in-out infinite; */
 }
 
 /* to reduce zoom drift and improve responsiveness it was switched to relative units */
@@ -420,6 +423,14 @@ address {
   height: 4rem;
   right: 16rem; /* використання rem замість px робить ел стабільними коли змінюємо масштаб */
   bottom: 20rem;
+  /* простіший варіант анімації
+  animation: twinkle 2.2s infinite alternate,
+    floatAndDrift1 7s ease-in-out infinite;
+  animation-delay: 0s, 0s; починається одразу */
+  --twinkle-delay: 0.2s; /* унікальний таймінг, який ніколи не перезапускається синхронно*/
+  --float-delay: 0.7s; /* унікальний таймінг, який ніколи не перезапускається синхронно*/
+  animation: twinkle 2.2s infinite alternate var(--twinkle-delay),
+    floatAndDrift1 7s ease-in-out infinite var(--float-delay);
 }
 
 .star-2 {
@@ -427,6 +438,14 @@ address {
   height: 2.5rem;
   top: 0;
   right: -6rem;
+  /* простіший варіант анімації
+  animation: twinkle 1.8s infinite alternate,
+    floatAndDrift2 6s ease-in-out infinite;
+  animation-delay: 0.7s, 1.3s; починається поетапно */
+  --twinkle-delay: 1.1s;
+  --float-delay: 2.3s;
+  animation: twinkle 1.8s infinite alternate var(--twinkle-delay),
+    floatAndDrift2 6s ease-in-out infinite var(--float-delay);
 }
 
 .star-3 {
@@ -434,6 +453,56 @@ address {
   height: 1rem;
   top: 14rem;
   right: -4rem;
+  /* простіший варіант анімації
+  animation: twinkle 2.5s infinite alternate,
+    floatAndDrift3 8s ease-in-out infinite;
+  animation-delay: 1.5s, 2.2s; починається поетапно */
+  --twinkle-delay: 0.6s;
+  --float-delay: 1.8s;
+  animation: twinkle 2.5s infinite alternate var(--twinkle-delay),
+    floatAndDrift3 8s ease-in-out infinite var(--float-delay);
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Each star has its own drift distance */
+@keyframes floatAndDrift1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(5px, -10px);
+  }
+}
+
+@keyframes floatAndDrift2 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(8px, -12px);
+  }
+}
+
+@keyframes floatAndDrift3 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(12px, -8px);
+  }
 }
 
 /* Advantages section*/
@@ -754,7 +823,7 @@ address {
   width: 100vw; /* забезпечить розташува модального вікна на увесь viewport */
   height: 100vh; /* забезпечить розташува модального вікна на увесь viewport */
   background-color: rgba(1, 28, 68, 0.5);
-  padding: 20px 0;
+  padding: 20px 0; /* optional відступ кругом модального вікна */
   transition: opacity 0.4s ease, visibility 0.4s ease; /* доданий ефект швидкого згасання */
   display: flex;
   justify-content: center;
