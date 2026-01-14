@@ -13,56 +13,108 @@
   <body>
     <header class="header" aria-label="Основна навігація">
       <div class="container">
-        <div class="header-logo">
-          <a href="/">
-            <img src="./images/logo.svg" alt="Логотип салону Beauty Zone" />
-          </a>
+        <div class="header-container">
+          <div class="header-logo">
+            <a href="/">
+              <img src="./images/logo.svg" alt="Логотип салону Beauty Zone" />
+            </a>
+          </div>
+          <nav class="header-nav centered" aria-label="Header navigation">
+            <ul class="centered">
+              <li><a class="link" href="#about-section">Про нас</a></li>
+              <li><a class="link" href="#advantages-section">Чому ми</a></li>
+              <li><a class="link" href="#procedures-section">Процедури</a></li>
+              <li><a class="link" href="#contact-section">Контакти</a></li>
+            </ul>
+          </nav>
+          <div class="header-social">
+            <a class="link" href="#">
+              <svg class="social-icon" width="32" height="32">
+                <use
+                  xlink:href="./images/svg-sprite.svg#icon-telephone-icon"
+                ></use>
+              </svg>
+            </a>
+            <a class="link" href="#" aria-label="Facebook">
+              <svg class="social-icon" width="32" height="32">
+                <use
+                  xlink:href="./images/svg-sprite.svg#icon-facebook-icon"
+                ></use>
+              </svg>
+            </a>
+            <a class="link" href="#" aria-label="Instagram">
+              <svg class="social-icon" width="32" height="32">
+                <use
+                  xlink:href="./images/svg-sprite.svg#icon-instagram-icon"
+                ></use>
+              </svg>
+            </a>
+          </div>
+          <!-- Burger button -->
+          <button type="button" class="header-burger">
+            <svg width="24" height="24">
+              <use xlink:href="./images/svg-sprite.svg#icon-menu"></use>
+            </svg>
+          </button>
+          <!-- Mobile menu -->
+          <div
+            class="mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Мобільне меню"
+            tabindex="-1"
+          >
+            <div class="mobile-menu-header">
+              <div class="mobile-menu-logo">
+                <a href="#">
+                  <img
+                    src="./images/logo.svg"
+                    alt="Логотип салону Beauty Zone"
+                  />
+                </a>
+              </div>
+              <button
+                type="button"
+                aria-label="Закрити меню"
+                class="mobile-menu-btn-close menu-btn-close"
+              >
+                <svg width="24" height="24" aria-hidden="true">
+                  <use xlink:href="./images/svg-sprite.svg#icon-close"></use>
+                </svg>
+              </button>
+            </div>
+            <ul class="mobile-menu-list">
+              <li><a class="link" href="#about-section">Про нас</a></li>
+              <li><a class="link" href="#advantages-section">Чому ми</a></li>
+              <li><a class="link" href="#procedures-section">Процедури</a></li>
+              <li><a class="link" href="#contact-section">Контакти</a></li>
+              <div class="mobile-menu-social">
+                <a class="link" href="#">
+                  <svg class="social-icon" width="32" height="32">
+                    <use
+                      xlink:href="./images/svg-sprite.svg#icon-telephone-icon"
+                    ></use>
+                  </svg>
+                </a>
+                <a class="link" href="#" aria-label="Facebook">
+                  <svg class="social-icon" width="32" height="32">
+                    <use
+                      xlink:href="./images/svg-sprite.svg#icon-facebook-icon"
+                    ></use>
+                  </svg>
+                </a>
+                <a class="link" href="#" aria-label="Instagram">
+                  <svg class="social-icon" width="32" height="32">
+                    <use
+                      xlink:href="./images/svg-sprite.svg#icon-instagram-icon"
+                    ></use>
+                  </svg>
+                </a>
+              </div>
+            </ul>
+          </div>
+          <div class="mobile-menu-shade"></div>
         </div>
-        <nav class="header-nav centered" aria-label="Header navigation">
-          <ul class="centered">
-            <li><a class="link" href="#about-section">Про нас</a></li>
-            <li><a class="link" href="#advantages-section">Чому ми</a></li>
-            <li><a class="link" href="#procedures-section">Процедури</a></li>
-            <li><a class="link" href="#contact-section">Контакти</a></li>
-          </ul>
-        </nav>
-        <div class="header-social">
-          <a class="link" href="#">
-            <svg class="social-icon" width="32" height="32">
-              <use
-                xlink:href="./images/svg-sprite.svg#icon-telephone-icon"
-              ></use>
-            </svg>
-          </a>
-          <a class="link" href="#" aria-label="Facebook">
-            <svg class="social-icon" width="32" height="32">
-              <use
-                xlink:href="./images/svg-sprite.svg#icon-facebook-icon"
-              ></use>
-            </svg>
-          </a>
-          <a class="link" href="#" aria-label="Instagram">
-            <svg class="social-icon" width="32" height="32">
-              <use
-                xlink:href="./images/svg-sprite.svg#icon-instagram-icon"
-              ></use>
-            </svg>
-          </a>
-        </div>
-        <!-- Burger button -->
-        <button type="button" class="header-burger">
-          <svg width="24" height="24">
-            <use xlink:href="./images/svg-sprite.svg#icon-menu"></use>
-          </svg>
-        </button>
-        <!-- Mobile menu -->
-        <div
-          class="mobile-menu"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Мобільне меню"
-          tabindex="-1"
-        ></div>
       </div>
     </header>
 
@@ -600,6 +652,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="./js/procedures-swiper.js"></script>
+    <script src="./js/mobile-menu.js"></script>
     <script src="./js/modal.js"></script>
   </body>
 </html>
